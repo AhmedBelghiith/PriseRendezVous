@@ -6,7 +6,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -27,5 +27,9 @@ public class Medecin implements Serializable {
 
     @JsonIgnore
     @ManyToMany(mappedBy = "medecins")
-    List<Clinique> cliniques;
+    private Set<Clinique> cliniques;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "medecin")
+    private Set<RendezVous> rendezVousList;
 }

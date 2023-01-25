@@ -1,4 +1,7 @@
 package com.example.prisesrdv.repository;
 
-public interface MedecinRepository extends org.springframework.data.jpa.repository.JpaRepository<com.example.prisesrdv.entities.Medecin, java.lang.Long> {
+import com.example.prisesrdv.entities.Medecin;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MedecinRepository extends JpaRepository<Medecin, Long> {
 }
